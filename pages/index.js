@@ -14,9 +14,9 @@ export default function Home() {
 
   useEffect(() => {
     fetchData({
-      limit: 10,
       page: page,
-      q: search,
+      limit: 10,
+      // q: search,
     });
   }, [search, page]);
 
@@ -45,7 +45,7 @@ export default function Home() {
     result = (
       <div className="container">
         <div className="w-full">
-          <table className="mx-auto table-auto border-2">
+          <table className="mx-auto table-auto border-1">
             <thead>
               <tr>
                 <th>Order id</th>
@@ -61,6 +61,7 @@ export default function Home() {
             <tbody>
               {data.map((value) => {
                 console.log(value);
+                console.log(value.name);
                 return (
                   <tr key={value.order_id}>
                     <td>{value.order_id}</td>
